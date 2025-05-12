@@ -1,6 +1,6 @@
 /* Custom font */
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 /*
   Lucho's Custom CSS Reset, inspired by Josh's Custom CSS Reset
   @https://www.joshwcomeau.com/css/custom-css-reset/
@@ -66,4 +66,105 @@ dialog {
   outline: none;
   max-width: 100%;
   padding: 0;
+}
+
+/* General */
+:root {
+  font-family: "Roboto", sans-serif;
+  --spacing-xxs: 0.1rem;
+  --spacing-xs: 0.5rem;
+  --spacing-s: 1rem;
+  --spacing-m: 2rem;
+  --spacing-l: 4rem;
+  --spacing-xl: 6rem;
+  --spacing-xxl: 8rem;
+  --yellow-pastel: #ebdbb2;
+  --blue-pastel: #83a598;
+  --green-pastel: #8ec07c;
+}
+
+body {
+  background-color: #282828;
+}
+
+/* Header */
+header {
+  justify-content: space-between;
+  padding: var(--spacing-m);
+}
+
+header,
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right {
+  flex: 1;
+}
+
+.nav-left {
+  flex: 1;
+  position: relative;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  justify-content: center;
+  gap: var(--spacing-m);
+  flex: 2;
+}
+
+/* Navigation Items */
+.nav-item svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  color: white;
+  cursor: pointer;
+  transition: color ease-in-out 200ms;
+}
+
+.nav-menu:hover .nav-item {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-menu:hover .nav-item:hover {
+  color: white;
+}
+
+/* Logo */
+.logo {
+  display: inline-flex;
+  font-weight: 400;
+  font-size: 2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.logo-part-1 {
+  color: white;
+}
+
+.logo-part-2 {
+  color: var(--yellow-pastel);
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--yellow-pastel), hsl(42, 100%, 80%));
+  transition: width 0.8s ease;
+}
+
+.logo:hover::after {
+  width: 100%;
 }
