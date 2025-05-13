@@ -89,14 +89,10 @@ body {
 
 /* Header */
 header {
-  justify-content: space-between;
-  padding: var(--spacing-m);
-}
-
-header,
-.nav-menu {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-m);
 }
 
 .nav-right {
@@ -105,11 +101,11 @@ header,
 
 .nav-left {
   flex: 1;
-  position: relative;
 }
 
 /* Navigation Menu */
 .nav-menu {
+  display: flex;
   justify-content: center;
   gap: var(--spacing-m);
   flex: 2;
@@ -140,29 +136,46 @@ header,
 
 /* Logo */
 .logo {
-  display: inline-flex;
+  display: flex;
+  align-items: flex-start;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: calc(1rem + 0.5vw);
   cursor: pointer;
-  position: relative;
 }
 
 .logo-part-1 {
-  color: white;
+  color: var(--blue-pastel);
+  margin-right: calc(0.3rem + 0.5vw);
+  transition: transform 0.5s ease;
+  transform: rotate(0deg);
+}
+
+.logo:hover .logo-part-1 {
+  transform: rotate(360deg);
 }
 
 .logo-part-2 {
+  color: white;
+}
+
+.logo-part-3,
+.logo-part-4 {
   color: var(--yellow-pastel);
 }
 
-.logo::after {
-  content: "";
-  position: absolute;
-  bottom: 5px;
-  height: 3px;
-  width: 0;
-  background: linear-gradient(90deg, var(--yellow-pastel), hsl(42, 100%, 80%));
-  transition: width 0.8s ease;
+.logo-part-4 {
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .logo:hover::after {
