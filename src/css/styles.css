@@ -79,7 +79,7 @@ dialog {
   --spacing-l: 4rem;
   --spacing-xl: 6rem;
   --spacing-xxl: 8rem;
-  --fg: #ebdbb2;
+  --fg: rgb(235, 219, 178);
   --blue: #83a598;
   --aqua: #689d6a;
   --red-pastel: #fb4934;
@@ -97,7 +97,7 @@ body {
 /* Header */
 header {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   padding: var(--spacing-m);
 }
@@ -110,8 +110,9 @@ header {
 
 /* Navigation Items */
 .nav-item svg {
-  width: 1rem;
-  height: 1rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--blue);
 }
 
 .nav-item {
@@ -119,16 +120,18 @@ header {
   align-items: center;
   gap: 0.1rem;
   color: white;
+  color: var(--fg);
   cursor: pointer;
   transition: color ease-in-out 200ms;
+  font-size: 1.1rem;
 }
 
 .nav-menu:hover .nav-item {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(235, 219, 178, 0.5);
 }
 
 .nav-menu:hover .nav-item:hover {
-  color: white;
+  color: var(--fg);
 }
 
 /* Logo */
