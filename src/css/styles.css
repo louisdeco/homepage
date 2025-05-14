@@ -1,6 +1,7 @@
 /* Custom font */
 @import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lusitana:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 /*
   Lucho's Custom CSS Reset, inspired by Josh's Custom CSS Reset
   @https://www.joshwcomeau.com/css/custom-css-reset/
@@ -80,11 +81,15 @@ dialog {
   --spacing-xxl: 8rem;
   --yellow-pastel: #ebdbb2;
   --blue-pastel: #83a598;
-  --green-pastel: #8ec07c;
+  --green-pastel: #689d6a;
+  --red-pastel: #fb4934;
 }
 
 body {
   background-color: #282828;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header */
@@ -178,6 +183,90 @@ header {
   }
 }
 
-.logo:hover::after {
-  width: 100%;
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 50vw;
+  margin: auto;
+  padding-bottom: calc(5rem + 5vw);
+}
+
+.greetings {
+  font-family: "JetBrains Mono", monospace;
+  display: flex;
+}
+
+.bracket {
+  color: var(--blue-pastel);
+  margin-right: calc(0.2rem + 0.2vw);
+}
+
+.hello-world {
+  color: var(--yellow-pastel);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(13, end);
+  width: 13ch;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 13ch;
+  }
+}
+
+.cursor {
+  animation: 1s blink step-end infinite;
+  color: white;
+}
+
+.name {
+  font-size: calc(2rem + 2vw);
+  color: var(--blue-pastel);
+  font-weight: bold;
+}
+
+.description {
+  color: white;
+  font-size: calc(0.7rem + 0.6vw);
+}
+
+.anchor-contact {
+  display: inline-block;
+  margin-top: calc(0.5rem + 0.5vw);
+  background-color: #282828;
+  border-radius: 0.5rem;
+  border: solid 2px var(--blue-pastel);
+  color: var(--blue-pastel);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.anchor-contact:hover {
+  background-color: var(--blue-pastel);
+  color: #282828;
+  transition: 0.2s all ease-in-out;
+  transform: translateY(-10%);
+}
+
+.highlight-yellow {
+  color: var(--yellow-pastel);
+}
+
+.border {
+  border-left: 2px solid var(--blue-pastel);
+  padding-left: calc(1rem + 1vw);
+}
+
+.greetings {
+  border: solid 1px var(--yellow-pastel);
+  padding: calc(0.2rem + 0.2vw) calc(0.3rem + 0.3vw);
+  border-radius: 0.5rem;
+  background-color: #1d2021;
 }
