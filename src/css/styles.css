@@ -291,6 +291,7 @@ header {
   align-content: center;
   gap: var(--spacing-xs);
 }
+
 .skill {
   border: 2px solid var(--blue);
   border-radius: 1rem;
@@ -360,4 +361,39 @@ header {
 
 .value-proposition {
   grid-area: value;
+}
+
+.featured {
+  height: 100vh;
+  width: 75vw;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-l);
+}
+
+.featured > img {
+  width: 40vw;
+  height: 80vh;
+  object-fit: cover;
+  border-radius: var(--spacing-s);
+}
+
+.project-description {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80vh;
+}
+
+.project-description > .title {
+  font-size: calc(3rem + 1.1vw);
+  font-weight: 600;
+  border-bottom: var(--blue) 2px solid;
+}
+
+.project-description > .details {
+  font-size: calc(0.5rem + 1vw);
+  line-height: 1.7;
 }
