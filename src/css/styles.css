@@ -438,7 +438,7 @@ header {
 }
 
 .contact {
-  height: 90vh;
+  min-height: 90vh;
   width: 100vw;
   background-color: pink;
   display: grid;
@@ -447,6 +447,7 @@ header {
     " info testimonial-1 testimonial-2"
     " info testimonial-1 testimonial-3";
   color: white;
+  position: relative;
 }
 
 .info {
@@ -584,4 +585,19 @@ header {
 .testimonial-3 > svg {
   height: 2rem;
   width: 2rem;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+p > a:hover {
+  color: black;
+  transition: color 0.2s ease;
 }
